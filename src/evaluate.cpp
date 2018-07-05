@@ -1,5 +1,6 @@
 #include "../include/repl.h"
 std::string evaluate(std::string x) {
+	trim(x);
 	std::vector<int> ops;
 	std::vector<std::string> values;
 	int num_lef_pars = 0;

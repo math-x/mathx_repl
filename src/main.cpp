@@ -2,8 +2,9 @@
 
 int main(){
 	std::string input;
+	std::cout << "MathX REPL, version 0.1\nType `exit` to exit\n";
 	std::cout << ">>> ";
-	std::cin >> input;
+	std::getline(std::cin, input);
 	while(input != "exit") {
 		try {
 			std::cout << evaluate(input);
@@ -12,7 +13,6 @@ int main(){
 			std::cout << "Invalid Expression";
 		}
 		std::cout << std::endl << ">>> ";
-		std::cin >> input;
+		std::getline(std::cin, input);
 	}
-	std::cout << "Exiting!\n";
 }
