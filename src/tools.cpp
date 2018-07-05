@@ -15,3 +15,16 @@ void trim(std::string &s) {
 		}
 	}
 }
+void remove_zeroes(std::string &x) {
+	int len = x.length() - 1;
+	if(x.find(".") != std::string::npos) {
+		while(x[len] == '0') {
+			x.erase(len,1);
+			len--;
+		}
+		if(x[len] == '.') {
+			x.erase(len,1);
+			len--;
+		}
+	}
+}

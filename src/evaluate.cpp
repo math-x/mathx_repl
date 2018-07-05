@@ -38,21 +38,46 @@ std::string evaluate(std::string x) {
 	else
 		values.push_back(parser(x.substr(start)));
 
-	std::string result = values[0];
+	// Operators in correct precedence order
+	// (*,/,%)
+	for (int i = 0; i < ops.size(); ++i)
+	{
+		if(x[ops[i]] == '*') {
+			values[i] = std::to_string(std::stold(values[i]) * std::stold(values[i+1]));
+			values.erase(values.begin() + i + 1);
+			ops.erase(ops.begin() + i);
+			i--;
+		}
+		else if(x[ops[i]] == '/') {
+			values[i] = std::to_string(std::stold(values[i]) / std::stold(values[i+1]));
+			values.erase(values.begin() + i + 1);
+			ops.erase(ops.begin() + i);
+			i--;
+		}
+		else if(x[ops[i]] == '%') {
+			values[i] = std::to_string(std::stol(values[i]) % std::stol(values[i+1]));
+			values.erase(values.begin() + i + 1);
+			ops.erase(ops.begin() + i);
+			i--;
+		}
+	}
+	// (+,-)
 	for (int i = 0; i < ops.size(); ++i)
 	{
 		if(x[ops[i]] == '+') {
-			result = std::to_string(std::stold(result) + std::stold(values[i+1]));
+			values[i] = std::to_string(std::stold(values[i]) + std::stold(values[i+1]));
+			values.erase(values.begin() + i + 1);
+			ops.erase(ops.begin() + i);
+			i--;
 		}
 		else if(x[ops[i]] == '-') {
-			result = std::to_string(std::stold(result) - std::stold(values[i+1]));
-		}
-		else if(x[ops[i]] == '*') {
-			result = std::to_string(std::stold(result) * std::stold(values[i+1]));
-		}
-		else if(x[ops[i]] == '/') {
-			result = std::to_string(std::stold(result) / std::stold(values[i+1]));
+			values[i] = std::to_string(std::stold(values[i]) - std::stold(values[i+1]));
+			values.erase(values.begin() + i + 1);
+			ops.erase(ops.begin() + i);
+			i--;
 		}
 	}
+	std::string result = values[0];
+	remove_zeroes(result);
 	return result;
 }
