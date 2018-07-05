@@ -59,6 +59,9 @@ std::string function_map(std::string function, std::string parameter) {
 	else if (function == "fabs") {
 		return std::to_string(std::fabs(std::stold(parameter)));
 	}
+	else if (function == "round") {
+		return std::to_string(std::round(std::stold(parameter)));
+	}
 	/*
 	else if (function == "NEW_FUNCTION") {
 		return std::to_string(NEW_FUNCTION(std::stold(parameter)));
