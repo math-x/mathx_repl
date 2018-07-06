@@ -11,19 +11,12 @@ int main(){
 				std::cout << assignments_evaluate(input);
 		}
 		catch (int x) {
-			if (x == 1) {
-				std::cout << "Error: Function not valid";
-			}
-			if (x == 2) {
-				std::cout << "Error: Variable not declared or invalid";
-			}
-			else if (x == 3) {
-				std::cout << "Error: Variable not declared";
-			}
+			error_handler(x);
 		}
 		catch (...) {
 			std::cout << "Error: Invalid Expression";
 		}
+
 		if(input != "")
 			std::cout << std::endl << ">>> ";
 		else

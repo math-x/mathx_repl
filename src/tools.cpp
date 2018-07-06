@@ -28,3 +28,11 @@ void remove_zeroes(std::string &x) {
 		}
 	}
 }
+void remove_outer_spaces(std::string &x) {
+	while (x[0] == ' ') {
+		x.erase(0,1);
+	}
+	while(x[x.size() - 1] == ' ') {
+		x.erase(x.size() - 1, 1);
+	}
+}

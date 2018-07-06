@@ -10,8 +10,8 @@ std::string parser(std::string x) {
 				decimal_point = true;
 			}
 			else {
-				printf("Error!\n");
-				exit(1);
+				// Multiple decimal points
+				throw 4;
 			}
 		}
 		else if (x[i] <= '9' && x[i] >= '0') {

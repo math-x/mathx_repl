@@ -12,10 +12,12 @@ std::string evaluate(std::string x);
 bool is_operator(char op);
 void trim(std::string &s);
 void remove_zeroes(std::string &x);
+void remove_outer_spaces(std::string &x);
 std::string function_map(std::string function, std::string parameter);
 bool variable_exists (std::string x);
 bool valid_var_name (std::string x);
 std::string assignments_evaluate (std::string x);
+void error_handler (int x);
 
 extern std::map<std::string, std::string> variables;
 #endif

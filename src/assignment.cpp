@@ -15,7 +15,7 @@ std::string assignments_evaluate (std::string x) {
 			}
 			else {
 				var_name = x.substr(i + 1, end - i);
-				std::cout << var_name << std::endl;
+				remove_outer_spaces(var_name);
 				if(variable_exists(var_name) || valid_var_name(var_name))
 					variables[var_name] = value;
 				else {
@@ -31,6 +31,7 @@ std::string assignments_evaluate (std::string x) {
 	}
 	else {
 		var_name = x.substr(0, end + 1);
+		remove_outer_spaces(var_name);
 		if(variable_exists(var_name) || valid_var_name(var_name))
 			variables[var_name] = value;
 		else {
