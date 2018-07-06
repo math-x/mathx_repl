@@ -67,4 +67,7 @@ std::string function_map(std::string function, std::string parameter) {
 		return std::to_string(NEW_FUNCTION(std::stold(parameter)));
 	}
 	*/
+	else {
+		throw 1;
+	}
 }
