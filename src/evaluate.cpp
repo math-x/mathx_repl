@@ -39,6 +39,15 @@ std::string evaluate(std::string x) {
 		values.push_back(parser(x.substr(start)));
 
 	// Operators in correct precedence order
+	// (^)
+	for (int i = ops.size() - 1; i >= 0; --i)
+	{
+		if(x[ops[i]] == '^') {
+			values[i] = std::to_string(std::pow(std::stold(values[i]), std::stold(values[i+1])));
+			values.erase(values.begin() + i + 1);
+			ops.erase(ops.begin() + i);
+		}
+	}
 	// (*,/,%)
 	for (int i = 0; i < ops.size(); ++i)
 	{
