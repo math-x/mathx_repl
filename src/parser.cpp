@@ -31,6 +31,15 @@ std::string parser(std::string x) {
 	size_t left_par = x.find_first_of("(");
 	size_t right_par = x.find_last_of(")");
 
+	if(left_par == std::string::npos && right_par == std::string::npos) {
+		if (variables.find(x) != variables.end()) {
+			return variables[x];
+		}
+		else {
+			// Variable not declared
+			throw 3;
+		}
+	}
 	function = x.substr(0, left_par);
 	parameter = x.substr(left_par + 1, right_par - left_par - 1);
 	std::string y = evaluate(parameter);

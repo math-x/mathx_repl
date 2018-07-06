@@ -7,12 +7,27 @@ int main(){
 	std::getline(std::cin, input);
 	while(input != "exit") {
 		try {
-			std::cout << evaluate(input);
+			if(input != "")
+				std::cout << assignments_evaluate(input);
+		}
+		catch (int x) {
+			if (x == 1) {
+				std::cout << "Error: Function not valid";
+			}
+			if (x == 2) {
+				std::cout << "Error: Variable not declared or invalid";
+			}
+			else if (x == 3) {
+				std::cout << "Error: Variable not declared";
+			}
 		}
 		catch (...) {
-			std::cout << "Invalid Expression";
+			std::cout << "Error: Invalid Expression";
 		}
-		std::cout << std::endl << ">>> ";
+		if(input != "")
+			std::cout << std::endl << ">>> ";
+		else
+			std::cout << ">>> ";
 		std::getline(std::cin, input);
 	}
 }
