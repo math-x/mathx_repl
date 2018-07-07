@@ -1,5 +1,5 @@
 CC = g++
-DEPS = bin/evaluate.o bin/function_map.o bin/parser.o bin/tools.o bin/variable_map.o bin/assignment.o bin/error.o bin/main.o
+DEPS = bin/evaluate.o bin/function_map.o bin/parser.o bin/tools.o bin/variable_map.o bin/assignment.o bin/error.o bin/run_repl.o bin/process_file.o bin/main.o
 
 all:
 	mkdir bin
@@ -10,6 +10,8 @@ all:
 	$(CC) -c src/variable_map.cpp -o bin/variable_map.o
 	$(CC) -c src/assignment.cpp -o bin/assignment.o
 	$(CC) -c src/error.cpp -o bin/error.o
+	$(CC) -c src/run_repl.cpp -o bin/run_repl.o
+	$(CC) -c src/process_file.cpp -o bin/process_file.o
 	$(CC) -c src/main.cpp -o bin/main.o
 	$(CC) $(DEPS) -o repl
 	rm -rf bin

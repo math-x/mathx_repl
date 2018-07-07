@@ -6,6 +6,7 @@
 #include <cmath>
 #include <vector>
 #include <map>
+#include <fstream>
 
 std::string parser(std::string x);
 std::string evaluate(std::string x);
@@ -18,6 +19,8 @@ bool variable_exists (std::string x);
 bool valid_var_name (std::string x);
 std::string assignments_evaluate (std::string x);
 void error_handler (int x);
+void run_repl();
+void process_file(std::string filename);
 
 extern std::map<std::string, std::string> variables;
 extern bool is_silenced;

@@ -6,7 +6,7 @@ REPL that works on top of MathX
 
 1. (Optional) Install `mathx` for added functionality
 2. run `make` or `make -s`
-3. Run the REPL using the command `./repl`
+3. Run the REPL using the command `./repl` or `./repl -s` (silenced mode) or run a script using `./repl <path_to_script>`
 
 ## Examples
 	>>> 1+2
