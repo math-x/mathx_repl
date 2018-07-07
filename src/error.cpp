@@ -13,6 +13,9 @@ void error_handler (int x) {
 	else if (x == 4) {
 		std::cout << "Error: Multiple decimal points in number";
 	}
+	else if (x == 5) {
+		std::cout << "Error: Incorrect number of arguments";
+	}
 	else {
 		std::cout << "Error: Unknown error";
 	}
