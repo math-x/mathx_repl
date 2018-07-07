@@ -42,6 +42,16 @@ std::string parser(std::string x) {
 	}
 	function = x.substr(0, left_par);
 	parameter = x.substr(left_par + 1, right_par - left_par - 1);
-	std::string y = evaluate(parameter);
+	std::string y;// = evaluate(parameter);
+	int start = 0;
+	for (int i = 0; i < parameter.size(); ++i)
+	{
+		if(parameter[i] == ',') {
+			y += evaluate(parameter.substr(start, i - start));
+			y += ",";
+			start = i + 1;
+		}
+	}
+	y += evaluate(parameter.substr(start));
 	return function_map(function, y);
 }
