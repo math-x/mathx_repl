@@ -15,6 +15,8 @@ std::string evaluate(std::string x) {
 		}
 		else if(x[i] == ')') {
 			num_rig_pars++;
+			if (num_rig_pars > num_lef_pars)
+				throw 6;
 			continue;
 		}
 		else if(is_operator(x[i])) {
@@ -22,6 +24,10 @@ std::string evaluate(std::string x) {
 				ops.push_back(i);
 			}
 		}
+	}
+
+	if(num_lef_pars != num_rig_pars) {
+		throw 6;
 	}
 	int start = 0;
 

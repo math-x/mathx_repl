@@ -16,6 +16,9 @@ void error_handler (int x) {
 	else if (x == 5) {
 		std::cout << "Error: Incorrect number of arguments";
 	}
+	else if (x == 6) {
+		std::cout << "Error: Invalid number or order of parentheses";
+	}
 	else {
 		std::cout << "Error: Unknown error";
 	}
