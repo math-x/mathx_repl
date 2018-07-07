@@ -141,6 +141,15 @@ std::string function_map(std::string function, std::string parameter) {
 		else
 			throw 5;
 	}
+	else if (function == "print") {
+		if (num_args == 1) {
+			if(is_silenced)
+				std::cout << args[0] << std::endl;
+			return args[0];
+		}
+		else
+			throw 5;
+	}
 	/*
 	else if (function == "NEW_FUNCTION") {
 		if (num_args == NUM_OF_ARGS)

@@ -19,4 +19,7 @@ void error_handler (int x) {
 	else {
 		std::cout << "Error: Unknown error";
 	}
+
+	if(is_silenced)
+		std::cout << std::endl;
 }

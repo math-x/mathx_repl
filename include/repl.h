@@ -20,4 +20,5 @@ std::string assignments_evaluate (std::string x);
 void error_handler (int x);
 
 extern std::map<std::string, std::string> variables;
+extern bool is_silenced;
 #endif
