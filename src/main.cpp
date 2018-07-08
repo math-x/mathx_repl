@@ -24,7 +24,8 @@ int main (int argc, char const *argv[]) {
 			is_silenced = true;
 		}
 	}
-	
+
+	initialise_constants();
 	if (is_file) {
 		/* So that errors are seperated by endline (see error.cpp) */
 		is_silenced = true;

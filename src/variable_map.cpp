@@ -27,3 +27,20 @@ bool valid_var_name (std::string x) {
 	}
 	return true;
 }
+
+/*
+ * Function to initialise constants
+ */
+void initialise_constants () {
+	variables["pi"] = "3.141592";
+	variables["exp"] = "2.718282";
+}
+/*
+ * Function which returns true if the variable is constant
+ */
+bool is_constant (std::string x) {
+	if(x == "pi" ||
+		x == "exp")
+		return true;
+	return false;
+}

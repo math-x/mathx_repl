@@ -33,6 +33,8 @@ std::string function_map(std::string function, std::string parameter);
 extern std::map<std::string, std::string> variables;
 bool variable_exists (std::string x);
 bool valid_var_name (std::string x);
+void initialise_constants();
+bool is_constant(std::string x);
 
 /* assignment.cpp */
 std::string assignments_evaluate (std::string x);

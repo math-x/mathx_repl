@@ -25,8 +25,14 @@ std::string assignments_evaluate (std::string x) {
 				var_name = x.substr(i + 1, end - i);
 				remove_outer_spaces(var_name);
 				/* Check for valid variable name */
-				if(variable_exists(var_name) || valid_var_name(var_name))
-					variables[var_name] = value;
+				if(variable_exists(var_name) || valid_var_name(var_name)) {
+					if(!is_constant(var_name)) {
+						variables[var_name] = value;
+					}
+					else {
+						throw 7;
+					}
+				}
 				else {
 					/* Variable not valid */
 					throw 2;
@@ -43,7 +49,12 @@ std::string assignments_evaluate (std::string x) {
 		var_name = x.substr(0, end + 1);
 		remove_outer_spaces(var_name);
 		if(variable_exists(var_name) || valid_var_name(var_name))
-			variables[var_name] = value;
+			if(!is_constant(var_name)) {
+				variables[var_name] = value;
+			}
+			else {
+				throw 7;
+			}
 		else {
 			/* Variable not valid */
 			throw 2;

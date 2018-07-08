@@ -22,6 +22,9 @@ void error_handler (int x) {
 	else if (x == 6) {
 		std::cout << "Error: Invalid number or order of parentheses";
 	}
+	else if (x == 7) {
+		std::cout << "Error: Constant value cannot be changed";
+	}
 	else {
 		std::cout << "Error: Unknown error";
 	}
