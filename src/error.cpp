@@ -1,5 +1,8 @@
 #include "../include/repl.h"
 
+/*
+ * Function which prints error according to error code
+ */
 void error_handler (int x) {
 	if (x == 1) {
 		std::cout << "Error: Function not valid";

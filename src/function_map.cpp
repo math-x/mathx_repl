@@ -1,10 +1,14 @@
 #include "../include/repl.h"
-
+/*
+ * Function that intakes function name and parameters (comma seperated) as
+ * string and returns the respective function.
+ */
 std::string function_map(std::string function, std::string parameter) {
-
+	/* Vector that stores the arguments/parameters */
 	std::vector<std::string> args;
 	int start = 0;
 
+	/* Split the arguments about `,` and push them in `args` vector */
 	for (int i = 0; i < parameter.size(); ++i)
 	{
 		if(parameter[i] == ',') {
@@ -15,10 +19,12 @@ std::string function_map(std::string function, std::string parameter) {
 	args.push_back(parameter.substr(start));
 	int num_args = args.size();
 
+	/* Function map */
 	if(function == "cos") {
 		if (num_args == 1)
 			return std::to_string(std::cos(std::stold(args[0])));
 		else
+			/* Invalid number of arguments */
 			throw 5;
 	}
 	else if (function == "sin") {
@@ -151,6 +157,7 @@ std::string function_map(std::string function, std::string parameter) {
 			throw 5;
 	}
 	/*
+	Template for new function : 
 	else if (function == "NEW_FUNCTION") {
 		if (num_args == NUM_OF_ARGS)
 			return std::to_string(NEW_FUNCTION(std::stold(args[0])));
@@ -159,6 +166,7 @@ std::string function_map(std::string function, std::string parameter) {
 	}
 	*/
 	else {
+		/* Function not found */
 		throw 1;
 	}
 }
