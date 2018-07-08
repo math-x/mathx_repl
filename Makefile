@@ -15,3 +15,7 @@ all:
 	$(CC) -c src/main.cpp -o bin/main.o
 	$(CC) $(DEPS) -o repl
 	rm -rf bin
+
+clean:
+	rm repl
+	rm -rf bin
