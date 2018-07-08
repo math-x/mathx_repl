@@ -25,6 +25,9 @@ void error_handler (int x) {
 	else if (x == 7) {
 		std::cout << "\033[1;31mError\033[0m: Constant value cannot be changed";
 	}
+	else if (x == 8) {
+		std::cout << "\033[1;31mError\033[0m: Divide by zero not permitted";
+	}
 	else {
 		std::cout << "\033[1;31mError\033[0m: Unknown error";
 	}

@@ -88,6 +88,8 @@ std::string evaluate(std::string x) {
 			i--;
 		}
 		else if(x[ops[i]] == '/') {
+			if (values[i + 1] == "0")
+				throw 8;
 			values[i] = std::to_string(std::stold(values[i]) / std::stold(values[i+1]));
 			values.erase(values.begin() + i + 1);
 			ops.erase(ops.begin() + i);
