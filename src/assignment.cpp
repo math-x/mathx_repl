@@ -25,11 +25,12 @@ std::string assignments_evaluate (std::string x) {
 				var_name = x.substr(i + 1, end - i);
 				remove_outer_spaces(var_name);
 				/* Check for valid variable name */
-				if(variable_exists(var_name) || valid_var_name(var_name)) {
+				if(valid_var_name(var_name)) {
 					if(!is_constant(var_name)) {
 						variables[var_name] = value;
 					}
 					else {
+						/* Cannot change value of a constant */
 						throw 7;
 					}
 				}

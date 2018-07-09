@@ -8,7 +8,7 @@ void error_handler (int x) {
 		std::cout << "\033[1;31mError\033[0m: Function not valid";
 	}
 	else if (x == 2) {
-		std::cout << "\033[1;31mError\033[0m: Variable not declared or invalid";
+		std::cout << "\033[1;31mError\033[0m: Variable name is invalid";
 	}
 	else if (x == 3) {
 		std::cout << "\033[1;31mError\033[0m: Variable not declared";
