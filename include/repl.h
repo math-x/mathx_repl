@@ -35,6 +35,7 @@ bool variable_exists (std::string x);
 bool valid_var_name (std::string x);
 void initialise_constants();
 bool is_constant(std::string x);
+std::string type_id (std::string x);
 
 /* assignment.cpp */
 std::string assignments_evaluate (std::string x);

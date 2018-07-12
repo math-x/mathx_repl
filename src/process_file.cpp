@@ -22,11 +22,11 @@ void process_file(std::string filename) {
 		 * commands depend on the previous ones.
 		 */
 		catch (int x) {
-			std::cout << "Error at line " << line_number << std::endl;
+			std::cout << "\033[1;31mError at line " << line_number << "\033[0m" << std::endl;
 			error_handler(x);
 		}
 		catch (...) {
-			std::cout << "Error: Invalid Expression";
+			std::cout << "\033[1;31mError\033[0m: Invalid Expression";
 		}
 
 	}

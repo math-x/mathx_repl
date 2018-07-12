@@ -44,3 +44,45 @@ bool is_constant (std::string x) {
 		return true;
 	return false;
 }
+
+std::string type_id (std::string x) {
+	bool is_num = true;
+	bool decimal_point = false;
+
+	/* Check if the string is a number */
+	for (int i = 0; i < x.size(); ++i) {
+		/* If period (here decimal point) occurs */
+		if(x[i] == '.') {
+			if(!decimal_point) {
+				/* Its a floating point number */
+				decimal_point = true;
+			}
+			else {
+				/* Multiple decimal points */
+				throw 4;
+			}
+		}
+		/* If the character is a number */
+		else if (x[i] <= '9' && x[i] >= '0') {
+			continue;
+		}
+		/* Else its not a number */
+		else {
+			is_num = false;
+			break;
+		}
+	}
+
+	/* Return specific type ids */
+	if(is_num) {
+		if(decimal_point) {
+			return "f";
+		}
+		else {
+			return "i";
+		}
+	}
+	else {
+		return "e";
+	}
+}

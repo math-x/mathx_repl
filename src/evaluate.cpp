@@ -74,6 +74,7 @@ std::string evaluate(std::string x) {
 	{
 		if(x[ops[i]] == '^') {
 			values[i] = std::to_string(std::pow(std::stold(values[i]), std::stold(values[i+1])));
+			remove_zeroes(values[i]);
 			values.erase(values.begin() + i + 1);
 			ops.erase(ops.begin() + i);
 		}
@@ -83,20 +84,30 @@ std::string evaluate(std::string x) {
 	{
 		if(x[ops[i]] == '*') {
 			values[i] = std::to_string(std::stold(values[i]) * std::stold(values[i+1]));
+			remove_zeroes(values[i]);
 			values.erase(values.begin() + i + 1);
 			ops.erase(ops.begin() + i);
 			i--;
 		}
 		else if(x[ops[i]] == '/') {
+			/* Divide by zero error */
 			if (values[i + 1] == "0")
 				throw 8;
 			values[i] = std::to_string(std::stold(values[i]) / std::stold(values[i+1]));
+			remove_zeroes(values[i]);
 			values.erase(values.begin() + i + 1);
 			ops.erase(ops.begin() + i);
 			i--;
 		}
 		else if(x[ops[i]] == '%') {
+			/* % only works for integer values */
+			if (type_id(values[i]) == "f" || type_id(values[i+1]) == "f")
+				throw 9;
+			/* Divide by zero error */
+			if (values[i + 1] == "0")
+				throw 8;
 			values[i] = std::to_string(std::stol(values[i]) % std::stol(values[i+1]));
+			remove_zeroes(values[i]);
 			values.erase(values.begin() + i + 1);
 			ops.erase(ops.begin() + i);
 			i--;
@@ -107,12 +118,14 @@ std::string evaluate(std::string x) {
 	{
 		if(x[ops[i]] == '+') {
 			values[i] = std::to_string(std::stold(values[i]) + std::stold(values[i+1]));
+			remove_zeroes(values[i]);
 			values.erase(values.begin() + i + 1);
 			ops.erase(ops.begin() + i);
 			i--;
 		}
 		else if(x[ops[i]] == '-') {
 			values[i] = std::to_string(std::stold(values[i]) - std::stold(values[i+1]));
+			remove_zeroes(values[i]);
 			values.erase(values.begin() + i + 1);
 			ops.erase(ops.begin() + i);
 			i--;

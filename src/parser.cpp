@@ -33,6 +33,7 @@ std::string parser(std::string x) {
 
 	/* If number, return as it is */
 	if(is_num) {
+		remove_zeroes(x);
 		return x;
 	}
 
@@ -69,6 +70,8 @@ std::string parser(std::string x) {
 	}
 	/* Last parameter */
 	y += evaluate(parameter.substr(start));
+	y = function_map(function, y);
+	remove_zeroes(y);
 	/* Call and return the value */
-	return function_map(function, y);
+	return y;
 }

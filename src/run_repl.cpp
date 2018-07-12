@@ -25,7 +25,7 @@ void run_repl () {
 			error_handler(x);
 		}
 		catch (...) {
-			std::cout << "Error: Invalid Expression";
+			std::cout << "\033[1;31mError\033[0m: Invalid Expression";
 		}
 
 		if(input != "" && !is_silenced)

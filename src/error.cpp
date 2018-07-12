@@ -28,6 +28,9 @@ void error_handler (int x) {
 	else if (x == 8) {
 		std::cout << "\033[1;31mError\033[0m: Divide by zero not permitted";
 	}
+	else if (x == 9) {
+		std::cout << "\033[1;31mError\033[0m: Operator `%` only works for integers";
+	}
 	else {
 		std::cout << "\033[1;31mError\033[0m: Unknown error";
 	}
