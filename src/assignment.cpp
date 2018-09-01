@@ -10,6 +10,12 @@ std::string assignments_evaluate (std::string x) {
 	bool last_val = true;
 	std::string value;
 	std::string var_name;
+
+	/* Handling comments */
+	int pos_hash = x.find("#");
+	if(pos_hash != std::string::npos) {
+		x = x.substr(0, pos_hash);
+	}
 	/* Iterate through all the characters from the last */
 	for (int i = len - 1; i >= 0; --i)
 	{
