@@ -1,12 +1,14 @@
 # MathX REPL
 
-REPL that works on top of MathX
+REPL/Interpreter that works on top of MathX. It focuses to provide a simple interface and easy python-like syntax. 
 
 ## Installation
 
-1. (Optional) Install `mathx` for added functionality
-2. Run the setup script using `./setup.sh`
-3. Run the REPL using the command `mathx` or `mathx -s` (silenced mode) or run a script using `mathx <path_to_script>`
+1. (Optional) Install [mathx](www.github.com/math-x/mathx) for added functionality.
+2. Clone this repository using `git clone https;//github.com/math-x/mathx_repl`
+3. Change directory to the source `cd mathx_repl`
+4. Run the setup script using `./setup.sh`
+5. Run the REPL using the command `mathx` or `mathx -s` (silenced mode) or run a script using `mathx <path_to_script>`
 
 ## Examples
 	>>> 1+2
