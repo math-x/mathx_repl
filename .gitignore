@@ -1,3 +1,6 @@
 repl
 bin/
 test.mx
+
+# Build directories
+build/

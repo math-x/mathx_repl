@@ -1,7 +1,7 @@
 /*
  * MathX REPL
  * include/repl.h
- * Authors: Kanav Gupta
+ * Copyright (c) 2018 Kanav Gupta
  */
 
 #ifndef MATHX_REPL_
