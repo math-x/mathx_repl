@@ -20,8 +20,13 @@ int main (int argc, char const *argv[]) {
 			filename = temp_arg;
 		}
 		/* Silenced mode */
-		if (temp_arg == "-s") {
+		if (temp_arg == "-s" || temp_arg == "--silenced") {
 			is_silenced = true;
+		}
+
+		if (temp_arg == "-v" || temp_arg == "--version") {
+			std::cout << "MathX REPL, version 0.1" << std::endl;
+			exit(0);
 		}
 	}
 
