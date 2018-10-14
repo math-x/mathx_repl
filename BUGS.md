@@ -13,4 +13,4 @@
 1. Better variable types and handling
 2. Maintain a stack/queue of previous commands
 3. Add string and array data types
-4. Coloured output
+4. Coloured output : Partially Done
